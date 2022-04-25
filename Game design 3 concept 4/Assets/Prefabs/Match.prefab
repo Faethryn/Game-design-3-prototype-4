@@ -4814,6 +4814,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6996047424665187981}
+  - component: {fileID: 5961239933138793856}
   m_Layer: 0
   m_Name: Match
   m_TagString: Untagged
@@ -4837,6 +4838,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 18.557, y: -5.708, z: -5.848}
+--- !u!114 &5961239933138793856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5192159220544311659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd4625708193ee42b6c34160035f039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ThrowingMatchPrefab: {fileID: 3262754645349118000, guid: c096573dcaaa45d42a5d5f89376450ad, type: 3}
+  _spawnTransform: {fileID: 0}
 --- !u!1001 &2527551240055999267
 PrefabInstance:
   m_ObjectHideFlags: 0
