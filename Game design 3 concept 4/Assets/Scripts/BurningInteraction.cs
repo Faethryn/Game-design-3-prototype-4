@@ -12,6 +12,11 @@ public class BurningInteraction : MonoBehaviour, IBurnable
     [SerializeField]
     private GameObject _particleSystem;
 
+    [SerializeField]
+    private float _lifetime;
+
+    private float _lifeTimer;
+
     public void Burning()
     {
         _isBurning = true;
@@ -19,8 +24,49 @@ public class BurningInteraction : MonoBehaviour, IBurnable
         _burnSensor.SetActive(true);
     }
 
-    public void BurningEvent()
+    [SerializeField]
+    private MeshRenderer _meshRenderer = null;
+    [SerializeField]
+    [Range(-1, 2)]
+    private float _dissolve = 0;
+
+    private MaterialPropertyBlock _matPropBlock;
+    private void OnValidate()
     {
+        if (_meshRenderer == null) _meshRenderer = this.GetComponent<MeshRenderer>() as MeshRenderer;
+        if (_matPropBlock == null) _matPropBlock = new MaterialPropertyBlock();
+
+        _matPropBlock.SetFloat("Disolve", _dissolve);
+        _meshRenderer.SetPropertyBlock(_matPropBlock);
 
     }
+
+    private void Awake()
+    {
+        if (_meshRenderer == null) _meshRenderer = this.GetComponent<MeshRenderer>() as MeshRenderer;
+        if (_matPropBlock == null) _matPropBlock = new MaterialPropertyBlock();
+
+        _matPropBlock.SetFloat("Disolve", _dissolve);
+        _meshRenderer.SetPropertyBlock(_matPropBlock);
+    }
+
+    private void Update()
+    {
+        if(_isBurning)
+        {
+           float lifeRatio = _lifeTimer / _lifetime;
+            float disolveValue =  (lifeRatio * 1.5f) -0.5f ;
+            _matPropBlock.SetFloat("Disolve", disolveValue);
+            _meshRenderer.SetPropertyBlock(_matPropBlock);
+            _lifeTimer += Time.deltaTime;
+
+
+        }
+        if (_lifeTimer >= _lifetime)
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
+
 }

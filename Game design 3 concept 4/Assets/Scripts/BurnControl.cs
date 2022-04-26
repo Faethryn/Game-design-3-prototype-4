@@ -29,4 +29,7 @@ public class BurnControl : MonoBehaviour
         _matPropBlock.SetFloat("Disolve", _dissolve);
         _meshRenderer.SetPropertyBlock(_matPropBlock);
     }
+
+
+
 }

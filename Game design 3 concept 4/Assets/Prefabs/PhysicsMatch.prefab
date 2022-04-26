@@ -5077,6 +5077,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7206927810626593515, guid: b7202d70f7bd10b41b184555a6b97629, type: 3}
+      propertyPath: m_Radius
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7206927810626593525, guid: b7202d70f7bd10b41b184555a6b97629, type: 3}
       propertyPath: m_Name
       value: BurnableObjectSensor
