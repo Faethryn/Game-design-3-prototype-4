@@ -101,6 +101,7 @@ MonoBehaviour:
   _burnSensor: {fileID: 2825150130813219880}
   _particleSystem: {fileID: 4453665934178533924}
   _lifetime: 10
+  _soundPrefab: {fileID: 4281636378199804449, guid: b2c9b84a292cc3c408421c45be82f91f, type: 3}
   _meshRenderer: {fileID: 4211984291335143677}
   _dissolve: -1
 --- !u!65 &8923455113003505098

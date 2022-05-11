@@ -17,6 +17,10 @@ public class BurningInteraction : MonoBehaviour, IBurnable
 
     private float _lifeTimer;
 
+    
+
+   
+
     public void Burning()
     {
         _isBurning = true;
@@ -59,7 +63,7 @@ public class BurningInteraction : MonoBehaviour, IBurnable
             _matPropBlock.SetFloat("Disolve", disolveValue);
             _meshRenderer.SetPropertyBlock(_matPropBlock);
             _lifeTimer += Time.deltaTime;
-
+            
 
         }
         if (_lifeTimer >= _lifetime)

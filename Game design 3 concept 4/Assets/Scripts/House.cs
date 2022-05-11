@@ -13,6 +13,11 @@ public class House : MonoBehaviour, IBurnable
 
     private float _lifeTimer;
 
+    private bool _spawnedSound = false;
+
+    [SerializeField]
+    private GameObject _soundPrefab;
+
     public void Burning()
     {
         _isBurning = true;
@@ -55,7 +60,12 @@ public class House : MonoBehaviour, IBurnable
             _matPropBlock.SetFloat("Disolve", disolveValue);
             _meshRenderer.SetPropertyBlock(_matPropBlock);
             _lifeTimer += Time.deltaTime;
-
+            if (!_spawnedSound)
+            {
+              GameObject spawnedSoundObject =  Instantiate(_soundPrefab, this.transform);
+                _spawnedSound = true;
+                spawnedSoundObject.GetComponent<AudioSource>().Play();
+            }
 
         }
         if (_lifeTimer >= _lifetime)

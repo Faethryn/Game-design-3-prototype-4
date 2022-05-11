@@ -9,18 +9,20 @@ public class InventoryMatch : MonoBehaviour
     [SerializeField]
     private Transform _spawnTransform;
 
-    [SerializeField]
-    private int _startingAmount;
+    public Equipment Equipment;
+
+
+
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1") && _startingAmount > 0)
+        if (Input.GetButtonDown("Fire1") && Equipment.Match  > 0)
         {
 
             Instantiate(_ThrowingMatchPrefab, _spawnTransform.position, _spawnTransform.rotation);
-            _startingAmount -= 1;
+            Equipment.Match -= 1;
         }
 
     }

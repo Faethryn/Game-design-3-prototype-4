@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6914169749548262170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666961052559284030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f455939842bb64eb1631b4b1a3e260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _FireworkObject: {fileID: 6637847228942137725, guid: 8abbf286d8bc2e64fa9bb2f7089241ea, type: 3}
+  _placementTransform: {fileID: 6914169751131742088}
+  _inventory: {fileID: 11400000, guid: 61a823c9c71e78a4ba8c8f061aad6234, type: 2}
 --- !u!1 &3870858293654736713
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,20 +294,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6914169749548262170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666961052559284030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f455939842bb64eb1631b4b1a3e260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _FireworkObject: {fileID: 6637847228942137725, guid: 8abbf286d8bc2e64fa9bb2f7089241ea, type: 3}
-  _placementTransform: {fileID: 6914169751131742088}
 --- !u!1 &6914169750398547706
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +342,7 @@ MonoBehaviour:
   _BurningCube: {fileID: 2881534303026886722, guid: af3bdca35196ae24e994cb3a0da3fcbf, type: 3}
   _spawnLocation: {fileID: 6914169751131742088}
   _maxTime: 1
+  _inventory: {fileID: 11400000, guid: 61a823c9c71e78a4ba8c8f061aad6234, type: 2}
 --- !u!1 &6914169751131742091
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +400,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5961239933138793856, guid: 762128dfd7f387541ab31b9b06ab0a92, type: 3}
+      propertyPath: _inventory
+      value: 
+      objectReference: {fileID: 11400000, guid: 61a823c9c71e78a4ba8c8f061aad6234, type: 2}
     - target: {fileID: 5961239933138793856, guid: 762128dfd7f387541ab31b9b06ab0a92, type: 3}
       propertyPath: _spawnTransform
       value: 

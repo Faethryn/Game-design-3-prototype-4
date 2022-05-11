@@ -13,6 +13,7 @@ public class InventoryJerrycan : MonoBehaviour
     [SerializeField]
     private float _maxTime;
 
+    public Equipment Equipment;
     private void Start()
     {
         _timer = _maxTime;
@@ -20,13 +21,14 @@ public class InventoryJerrycan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && Equipment.Fuel > 0)
         {
             _timer += Time.deltaTime;
             if (_timer >= _maxTime)
             {
                 _timer = 0;
                 Instantiate(_BurningCube, _spawnLocation.position, _spawnLocation.rotation);
+                Equipment.Fuel -= 1;
             }
         }
     }

@@ -8,18 +8,18 @@ public class InventoryFireWork : MonoBehaviour
     private GameObject _FireworkObject;
     [SerializeField]
     private Transform _placementTransform;
-    [SerializeField]
-    private int _startingAmount;
+
+    public Equipment Equipment;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && _startingAmount > 0)
+        if (Input.GetButtonDown("Fire1") && Equipment.Firework > 0)
         {
            
              
                 Instantiate(_FireworkObject, _placementTransform.position, _placementTransform.rotation);
-            
+            Equipment.Firework -= 1;
         }
     }
 }
