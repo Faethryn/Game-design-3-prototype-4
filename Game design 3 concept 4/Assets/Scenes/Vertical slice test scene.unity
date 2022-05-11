@@ -725,6 +725,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976463635}
   m_CullTransparentMesh: 1
+--- !u!1 &1224131362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4843047469562573358, guid: ea4b24d3faaf4e846914ec9994b725a0, type: 3}
+  m_PrefabInstance: {fileID: 8298046568583622633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1224131363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6449475089408579269, guid: ea4b24d3faaf4e846914ec9994b725a0, type: 3}
+  m_PrefabInstance: {fileID: 8298046568583622633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224131362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd4625708193ee42b6c34160035f039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1329908379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -891,7 +907,7 @@ MonoBehaviour:
   _equipment: {fileID: 1969634853}
   _invFirework: {fileID: 6914169749288457308}
   _invJerrycan: {fileID: 6914169750751385716}
-  _invMatch: {fileID: 2190500085917930045}
+  _invMatch: {fileID: 1224131363}
   _hudManager: {fileID: 889961448}
   _startingMatches: 10
   _startingFuel: 200
@@ -910,17 +926,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2190500085917930045 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7876423406005698004, guid: ea4b24d3faaf4e846914ec9994b725a0, type: 3}
-  m_PrefabInstance: {fileID: 8298046568583622633}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd4625708193ee42b6c34160035f039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6914169749288457308 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3232605566279121845, guid: ea4b24d3faaf4e846914ec9994b725a0, type: 3}
@@ -1002,5 +1007,9 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5084731653528311801, guid: ea4b24d3faaf4e846914ec9994b725a0, type: 3}
+      propertyPath: _match
+      value: 
+      objectReference: {fileID: 1224131362}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea4b24d3faaf4e846914ec9994b725a0, type: 3}
