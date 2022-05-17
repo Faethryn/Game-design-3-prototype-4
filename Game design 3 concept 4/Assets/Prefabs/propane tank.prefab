@@ -127,8 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _range: 10
-  _force: 3000
+  _force: 1000
   _interactibleLayers:
     serializedVersion: 2
     m_Bits: 128
   _explosionPrefab: {fileID: 4281636378199804449, guid: 7fde1d1090ef372449af97f212ce4477, type: 3}
+  _explosionParticlePrefab: {fileID: 6395068507869165326, guid: 180b8d26899824fa8884b05d27ab33c2, type: 3}

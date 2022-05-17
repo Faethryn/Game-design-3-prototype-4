@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Vertical slice test scene.unity
+- path: Assets/Scenes/Terraintest.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

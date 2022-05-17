@@ -11,9 +11,11 @@ public class PropaneTank : MonoBehaviour, IBurnable
     [SerializeField]
     private LayerMask _interactibleLayers;
 
-    
+
     [SerializeField]
     private GameObject _explosionPrefab;
+    [SerializeField]
+    private GameObject _explosionParticlePrefab;
 
     private bool _burning = false;
 
@@ -42,6 +44,7 @@ public class PropaneTank : MonoBehaviour, IBurnable
             _burning = true;
         }
         Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
-            Destroy(this.gameObject);
+        Instantiate(_explosionParticlePrefab, this.transform.position, this.transform.rotation);
+        Destroy(this.gameObject);
     }
 }

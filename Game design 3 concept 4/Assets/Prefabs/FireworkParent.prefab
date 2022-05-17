@@ -66,6 +66,13 @@ MonoBehaviour:
   _burnSensor: {fileID: 3898401342289764635}
   _particleSystem: {fileID: 2252843214850300515}
   _rocketBody: {fileID: 2251315332711111168}
+  _lifetime: 5
+  _range: 5
+  _force: 1000
+  _interactibleLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  _fireWorkParticlePrefab: {fileID: 8729751284360508406, guid: 0c2a71afe1c15514fa95c7f2f5cba967, type: 3}
 --- !u!54 &2251315332711111168
 Rigidbody:
   m_ObjectHideFlags: 0

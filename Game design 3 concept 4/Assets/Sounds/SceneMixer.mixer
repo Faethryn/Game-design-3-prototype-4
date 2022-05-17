@@ -49,6 +49,7 @@ AudioMixerController:
     - 3bbf44ae4509e2045b45638f9ac1ba14
     - f94b5f4f73055fe4f826522f5966ea83
     - 5338374ad3de08b469dbd4d75bdd54b5
+    - e3b2bcdb082875d4daacd9264759504c
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -64,6 +65,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 5844217808005369117}
   - {fileID: 6997516235346939386}
+  - {fileID: 3633430669436115354}
   m_Volume: b691a881d5d6eef4e82e835714edc0b0
   m_Pitch: e782cf32cf83a8e4c90e4088906e7ec4
   m_Send: 00000000000000000000000000000000
@@ -100,6 +102,39 @@ AudioMixerSnapshotController:
     b691a881d5d6eef4e82e835714edc0b0: 20
     ac3582be66aca534a8f21b4e7c9cfa50: -0.08374829
   m_TransitionOverrides: {}
+--- !u!244 &2721857803082187841
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 68ff1ac5a54c30341aa7f882a0c86e98
+  m_EffectName: Attenuation
+  m_MixLevel: 2ba60590c07fd9848be985838965f640
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &3633430669436115354
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FireWorks
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: e3b2bcdb082875d4daacd9264759504c
+  m_Children: []
+  m_Volume: 09ddf902cdbef74479316d3ddb60368a
+  m_Pitch: 2f754024bca4fee4b9fb701bcc216249
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 2721857803082187841}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &5844217808005369117
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
