@@ -9,14 +9,15 @@ public class MatchLogic : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        
+
         other.GetComponent<IBurnable>().Burning();
+        //StartCoroutine(Burning(other.GetComponent<IBurnable>()));
     }
 
     IEnumerator Burning(IBurnable burnObject)
     {
         burnObject.Burning();
 
-        yield return null;
+        yield return new WaitForEndOfFrame();
     }
 }

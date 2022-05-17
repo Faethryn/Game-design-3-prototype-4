@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurningInteraction : MonoBehaviour, IBurnable
+public class BurningInteraction : MonoBehaviour, IBurnable, IEffectable
 {
     private bool _isBurning;
 
@@ -73,4 +73,19 @@ public class BurningInteraction : MonoBehaviour, IBurnable
 
     }
 
+    public void AddVelocity(Vector3 position, float range, float maxForce)
+    {
+
+        Vector3 ownPosition = this.transform.position;
+
+        Vector3 positionDifference = ownPosition - position;
+
+        float distance = Vector3.Distance(position, ownPosition);
+
+        float forceMultiplier = (distance / range) * maxForce;
+
+        Vector3 addedForce = Vector3.Normalize(positionDifference);
+
+        this.GetComponent<Rigidbody>().AddForce(addedForce * forceMultiplier);
+    }
 }
