@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _range: 10
-  _force: 1000
+  _force: 4000
   _interactibleLayers:
     serializedVersion: 2
     m_Bits: 128

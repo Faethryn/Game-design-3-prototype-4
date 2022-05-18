@@ -58,6 +58,7 @@ MonoBehaviour:
   _particleSystem: {fileID: 3123275805436437917}
   _lifetime: 30
   _soundPrefab: {fileID: 4281636378199804449, guid: b2c9b84a292cc3c408421c45be82f91f, type: 3}
+  _FireCollider: {fileID: 3459086090455200351, guid: 62ad6aaab67a58a41884461e3cf53c92, type: 3}
   _meshRenderer: {fileID: 5308046961516668259}
   _dissolve: 0
 --- !u!23 &5308046961516668259

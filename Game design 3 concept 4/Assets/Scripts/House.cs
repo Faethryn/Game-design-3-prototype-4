@@ -17,12 +17,16 @@ public class House : MonoBehaviour, IBurnable
 
     [SerializeField]
     private GameObject _soundPrefab;
+   
+    [SerializeField]
+    private GameObject _FireCollider;
 
     public void Burning()
     {
         _isBurning = true;
         _particleSystem.SetActive(true);
-        
+        Instantiate(_FireCollider, this.transform);
+
     }
 
     [SerializeField]

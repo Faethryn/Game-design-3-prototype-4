@@ -24386,7 +24386,7 @@ GameObject:
   - component: {fileID: 3135201103907450676}
   - component: {fileID: 7152538790654471021}
   m_Layer: 0
-  m_Name: ExplosionSource
+  m_Name: FireworkSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24440,7 +24440,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.1
-  MaxDistance: 150
+  MaxDistance: 300
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

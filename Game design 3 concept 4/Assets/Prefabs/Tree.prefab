@@ -57,7 +57,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particleSystem: {fileID: 4519516965383573535}
   _lifetime: 30
-  _soundPrefab: {fileID: 0}
+  _soundPrefab: {fileID: 4281636378199804449, guid: b2c9b84a292cc3c408421c45be82f91f, type: 3}
+  _FireCollider: {fileID: 8195118096337744124, guid: 1c4f06bc09f9b7b40801fe366c072cd8, type: 3}
   _meshRenderer: {fileID: 7831042504271595836}
   _dissolve: -1
 --- !u!23 &7831042504271595836

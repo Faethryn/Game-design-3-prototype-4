@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8701820115140417880}
   - component: {fileID: 8923455113003505098}
   - component: {fileID: 8326766165880331077}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: BurnableCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7206927810626593515, guid: b7202d70f7bd10b41b184555a6b97629, type: 3}
       propertyPath: m_Radius
-      value: 1.53
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7206927810626593525, guid: b7202d70f7bd10b41b184555a6b97629, type: 3}
       propertyPath: m_Name
