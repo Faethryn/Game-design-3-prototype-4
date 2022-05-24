@@ -13,15 +13,27 @@ public class HudManager : MonoBehaviour
     [SerializeField]
     private Text _hudFuel;
 
+    [SerializeField]
+    private Text _hudCompletion;
+
     public Equipment _equipment;
 
-   public void GameLoopAwake(Equipment equipment)
+    public LevelProgression LevelProgression;
+
+    public void GameLoopAwake(Equipment equipment, LevelProgression levelProgression)
     {
         _equipment = equipment;
         _hudMatches.text = "Matches: " + _equipment.Match.ToString();
         _hudFuel.text = "Fuel: " + _equipment.Fuel.ToString();
         _hudFireworks.text = "Fireworks: " + _equipment.Firework.ToString();
         _equipment.PropertyChanged += (s, e) => InventoryPropertyChanged(s, e);
+
+        LevelProgression = levelProgression;
+        _hudCompletion.text = "Level Completion " + LevelProgression.CurrentLevelPercentage.ToString() + "%";
+
+        LevelProgression.PropertyChanged += (s, e) => LevelCompletionChanged(s, e);
+
+
     }
     protected void InventoryPropertyChanged(object sender, PropertyChangedEventArgs e)
     {
@@ -39,5 +51,17 @@ public class HudManager : MonoBehaviour
         }
 
     }
+
+    protected void LevelCompletionChanged(object sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName.Equals(nameof(LevelProgression.CurrentLevelPercentage)))
+        {
+            _hudCompletion.text = "Level Completion: " + LevelProgression.CurrentLevelPercentage.ToString() + "%";
+
+
+        }
+
+    }
+
 
 }

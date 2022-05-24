@@ -7,6 +7,9 @@ public class ExplosionSource : MonoBehaviour
     [SerializeField]
     private AudioClip _thisClip;
 
+    [SerializeField]
+    private GameObject _parentObject;
+
     private float _maxTimer;
 
     private float _timer;
@@ -22,7 +25,7 @@ public class ExplosionSource : MonoBehaviour
         _timer += Time.deltaTime;
         if (_timer >= _maxTimer)
         {
-            Destroy(this.gameObject);
+            Destroy(_parentObject);
         }
     }
 }

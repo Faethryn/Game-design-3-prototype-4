@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _thisClip: {fileID: 8300000, guid: 4ee95fcdaf6098d499694220b6229618, type: 3}
+  _parentObject: {fileID: 4281636378199804449}
 --- !u!82 &4281636378199804638
 AudioSource:
   m_ObjectHideFlags: 0

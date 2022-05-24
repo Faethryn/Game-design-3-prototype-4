@@ -21,6 +21,8 @@ public class House : MonoBehaviour, IBurnable
     [SerializeField]
     private GameObject _FireCollider;
 
+    public LevelProgression _levelProgression;
+
     public void Burning()
     {
         _isBurning = true;
@@ -74,6 +76,7 @@ public class House : MonoBehaviour, IBurnable
         }
         if (_lifeTimer >= _lifetime)
         {
+            _levelProgression.RemoveHouse(this);
             Destroy(this.gameObject);
         }
 
