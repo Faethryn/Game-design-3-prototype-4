@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class GameLoop : MonoBehaviour
@@ -47,11 +48,22 @@ public class GameLoop : MonoBehaviour
         _hudManager.GameLoopAwake(_equipment, _levelProgression);
 
 
+        _levelProgression.PropertyChanged += (s, e) => LevelCompletionChanged(s, e);
+
+
     }
 
-    // Update is called once per frame
-    void Update()
+    protected void LevelCompletionChanged(object sender, PropertyChangedEventArgs e)
     {
-        
+        if (e.PropertyName.Equals(nameof(LevelProgression.WinConditionMet)))
+        {
+            
+            if (_levelProgression.WinConditionMet == true)
+            {
+                Debug.Log("You may continue");
+            }
+
+        }
+
     }
 }

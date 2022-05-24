@@ -8,7 +8,9 @@ using UnityEngine;
 
 public class LevelProgression : MonoBehaviour, INotifyPropertyChanged
 {
-   
+    private bool _winConditionMet;
+
+    public bool WinConditionMet { get { return _winConditionMet; } set { if (_winConditionMet == value) return; _winConditionMet = value; OnPropertyChanged(); } }
 
     private int _currentLevelPercentage;
 
@@ -44,6 +46,11 @@ public class LevelProgression : MonoBehaviour, INotifyPropertyChanged
         float currentHouseAmount = Houses.Count;
         float currentTreeAmount = Trees.Count;
 
+        if (currentHouseAmount == 0)
+        {
+            WinConditionMet = true;
+        }
+
         float currentValue = currentHouseAmount + (currentTreeAmount /2);
 
         CurrentLevelPercentage = (int)(100 - ((currentValue / _startingValue) * 100));
@@ -53,6 +60,7 @@ public class LevelProgression : MonoBehaviour, INotifyPropertyChanged
     public void SetStartingScore()
     {
         _startingValue = _initialHouseCount + (_initialTreeCount / 2);
+        _winConditionMet = false;
     }
 
     public void RemoveTree(Tree removedTree)
