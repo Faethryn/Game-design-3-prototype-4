@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class ToNextScene : MonoBehaviour
@@ -13,20 +14,22 @@ public class ToNextScene : MonoBehaviour
 
     public LevelSaveSystem LevelSaveSystem;
 
+    private PlayerInput _playerInput;
+
+    private void Start()
+    {
+        _playerInput = new PlayerInput();
+        _playerInput.Player.Enable();
+        _playerInput.Player.NextLevel.performed += Action;
+    }
+
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(_nextLevelName);
 
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("Submit"))
-        {
-            SaveScore();
-            LoadNextLevel();
-        }
-    }
+    
 
     private void SaveScore()
     {
@@ -34,5 +37,13 @@ public class ToNextScene : MonoBehaviour
         LevelSaveSystem.SaveCompletion(LevelProgression.CurrentLevelPercentage, SceneManager.GetActiveScene().name);
     }
 
+    private void Action(InputAction.CallbackContext context)
+    {
+        
+        
+            SaveScore();
+            LoadNextLevel();
+        
+    }
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InventoryMatch : MonoBehaviour
 {
@@ -10,20 +11,42 @@ public class InventoryMatch : MonoBehaviour
     private Transform _spawnTransform;
 
     public Equipment Equipment;
+   
+    [SerializeField]
+    private PlayerInput _playerInput;
 
-
-
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
+        _playerInput = new PlayerInput();
+        _playerInput.Player.Enable();
+        _playerInput.Player.UseItem.performed += Action;
+    }
 
-        if (Input.GetButtonDown("Fire1") && Equipment.Match  > 0)
+
+    
+    private void Action(InputAction.CallbackContext context)
+    {
+        if (this.gameObject.active && Equipment.Match > 0)
         {
 
             Instantiate(_ThrowingMatchPrefab, _spawnTransform.position, _spawnTransform.rotation);
             Equipment.Match -= 1;
         }
-
     }
+
+
+
+    // Update is called once per frame
+    //void Update()
+    //{
+
+    //    if (Input.GetButtonDown("Fire1") && Equipment.Match  > 0)
+    //    {
+
+    //        Instantiate(_ThrowingMatchPrefab, _spawnTransform.position, _spawnTransform.rotation);
+    //        Equipment.Match -= 1;
+    //    }
+
+    //}
+
 }

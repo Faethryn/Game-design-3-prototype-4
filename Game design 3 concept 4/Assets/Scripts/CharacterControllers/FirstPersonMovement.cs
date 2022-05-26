@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FirstPersonMovement : MonoBehaviour
 {
@@ -13,8 +14,10 @@ public class FirstPersonMovement : MonoBehaviour
     [Range(0.5f, 100f)]
     private float _jumpHeight;
     private Vector3 _jumpForce;
-    private bool _jump;
-   
+    private bool _jump = false;
+
+    [SerializeField]
+    private PlayerInput _playerInput;
     
 
     // Start is called before the first frame update
@@ -22,14 +25,17 @@ public class FirstPersonMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         _jumpForce = -Physics.gravity.normalized * Mathf.Sqrt(2 * Physics.gravity.magnitude * _jumpHeight);
+        _playerInput = new PlayerInput();
+        _playerInput.Player.Enable();
+
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
+        float x = _playerInput.Player.Movement.ReadValue<Vector2>().x;
+        float z = _playerInput.Player.Movement.ReadValue<Vector2>().y;
         Vector3 move = transform.right * x + transform.forward * z;
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
@@ -60,13 +66,15 @@ public class FirstPersonMovement : MonoBehaviour
 
     private void ApplyJump()
     {
-        if (Input.GetButton("Jump") && playerController.isGrounded)
+        if (_playerInput.Player.Jump.ReadValue<float>() > 0 && playerController.isGrounded)
         {
             _velocity += _jumpForce;
            
         }
-
+      
     }
+
+   
 
     private void ApplyGravity()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InventoryFireWork : MonoBehaviour
 {
@@ -11,15 +12,37 @@ public class InventoryFireWork : MonoBehaviour
 
     public Equipment Equipment;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private PlayerInput _playerInput;
+
+    private void Start()
     {
-        if (Input.GetButtonDown("Fire1") && Equipment.Firework > 0)
-        {
+        _playerInput = new PlayerInput();
+        _playerInput.Player.Enable();
+        _playerInput.Player.UseItem.performed += Action;
+    }
+
+    // Update is called once per frame
+   //private void Update()
+   // {
+   //     if ( Equipment.Firework > 0)
+   //     {
            
              
-                Instantiate(_FireworkObject, _placementTransform.position, _placementTransform.rotation);
+   //             Instantiate(_FireworkObject, _placementTransform.position, _placementTransform.rotation);
+   //         Equipment.Firework -= 1;
+   //     }
+   // }
+
+    private void Action(InputAction.CallbackContext context)
+    {
+        if (this.gameObject.active && Equipment.Firework > 0)
+        {
+
+
+            Instantiate(_FireworkObject, _placementTransform.position, _placementTransform.rotation);
             Equipment.Firework -= 1;
         }
     }
+
 }

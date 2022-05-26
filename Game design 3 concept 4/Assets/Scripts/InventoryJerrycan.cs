@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InventoryJerrycan : MonoBehaviour
 {
@@ -14,14 +15,32 @@ public class InventoryJerrycan : MonoBehaviour
     private float _maxTime;
 
     public Equipment Equipment;
+    
+
+    [SerializeField]
+    private PlayerInput _playerInput;
+
     private void Start()
     {
         _timer = _maxTime;
+        _playerInput = new PlayerInput();
+        _playerInput.Player.Enable();
+       
     }
+
+
+
+   
+
+
+
+
+
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && Equipment.Fuel > 0)
+        if (_playerInput.Player.UseGasoline.ReadValue<float>() != 0 && Equipment.Fuel > 0)
         {
             _timer += Time.deltaTime;
             if (_timer >= _maxTime)

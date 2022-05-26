@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerEquipment : MonoBehaviour
 {
@@ -16,29 +17,64 @@ public class PlayerEquipment : MonoBehaviour
     [SerializeField]
     private GameObject _fireWork;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private int _itemIndex = 1;
+
+    [SerializeField]
+    private PlayerInput _playerInput;
+
+    private void Start()
     {
-        
+        _playerInput = new PlayerInput();
+        _playerInput.Player.Enable();
+        _playerInput.Player.NextItem.performed += NextItemAction;
+        _playerInput.Player.PreviousItem.performed += PreviousItemAction;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void NextItemAction(InputAction.CallbackContext context)
     {
+        if (_itemIndex == 3)
+        {
+            _itemIndex = 1;
+        }
+        else
+        {
+            _itemIndex += 1;
+        }
+
         SwitchEquipment();
-       
+
     }
+
+    private void PreviousItemAction(InputAction.CallbackContext context)
+    {
+        if (_itemIndex == 1)
+        {
+            _itemIndex = 3;
+        }
+        else
+        {
+            _itemIndex -= 1;
+        }
+
+        SwitchEquipment();
+    }
+
+   
+
+
+
 
     private void SwitchEquipment()
     {
-       if (Input.GetButtonDown("Hotbar 1"))
+       if (_itemIndex == 1)
         {
            
             _match.SetActive(true);
             _jerryCan.SetActive(false);
             _fireWork.SetActive(false);
         }
-        if (Input.GetButtonDown("Hotbar 2"))
+        if (_itemIndex == 2)
         {
           
             _match.SetActive(false);
@@ -46,7 +82,7 @@ public class PlayerEquipment : MonoBehaviour
             _fireWork.SetActive(false);
         }
     
-        if (Input.GetButtonDown("Hotbar 3"))
+        if (_itemIndex == 3)
         {
            
          _match.SetActive(false);
