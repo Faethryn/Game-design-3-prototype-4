@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 512698696
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: pyropixel_info
+      Dependencies: {}
+    Info_1:
+      Name: pyropixel
+      Dependencies: {}

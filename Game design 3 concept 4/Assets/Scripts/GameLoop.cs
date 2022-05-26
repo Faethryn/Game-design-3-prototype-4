@@ -20,16 +20,23 @@ public class GameLoop : MonoBehaviour
     private LevelProgression _levelProgression;
 
     [SerializeField]
+    private ToNextScene _nextSceneLoader;
+
+
+    [SerializeField]
+    private LevelSaveSystem _levelSaveSystem;
+
+    [SerializeField]
     private int _startingMatches;
     [SerializeField]
     private int _startingFuel;
     [SerializeField]
     private int _startingFireworks;
-  
+
     void Start()
     {
         _levelProgression._gameLoop = this;
-       House[] tempHouses = GameObject.FindObjectsOfType<House>();
+        House[] tempHouses = GameObject.FindObjectsOfType<House>();
         _levelProgression.AddHouses(tempHouses);
 
         Tree[] tempTrees = GameObject.FindObjectsOfType<Tree>();
@@ -50,6 +57,9 @@ public class GameLoop : MonoBehaviour
 
         _levelProgression.PropertyChanged += (s, e) => LevelCompletionChanged(s, e);
 
+        _nextSceneLoader.LevelProgression = _levelProgression;
+        _nextSceneLoader.LevelSaveSystem = _levelSaveSystem;
+
 
     }
 
@@ -61,6 +71,10 @@ public class GameLoop : MonoBehaviour
             if (_levelProgression.WinConditionMet == true)
             {
                 Debug.Log("You may continue");
+
+                _nextSceneLoader.gameObject.SetActive(true);
+
+
             }
 
         }

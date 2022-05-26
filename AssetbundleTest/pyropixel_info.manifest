@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 3014082115
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6d425944864f126988324efcc17eb52b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 078aedd307efd527c6428ef5ad0cf06a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: b993d0c3dc764684093d60fda4fdad2b, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetBundleObjects/pyropixel_info.asset
+Dependencies: []

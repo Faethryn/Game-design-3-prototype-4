@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SandboxScene.unity
+    path: Assets/Scenes/PyroPixel_MenuScreen.unity
+    guid: a8f8b9e8a002fb8459bae6c690605ae9
+  - enabled: 1
+    path: Assets/Scenes/PyroPixel_SandboxScene.unity
     guid: a0df980bbb6251d46ae5b3918ed5e443
+  - enabled: 1
+    path: Assets/Scenes/PyroPixel_LevelSelect.unity
+    guid: 25fd69d0ac6907447ae0044833cc4388
   m_configObjects: {}

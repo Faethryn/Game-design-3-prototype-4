@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HudManager : MonoBehaviour
 {
     [SerializeField]
-    private Text _hudMatches;
+    private TMP_Text _hudMatches;
     [SerializeField]
-    private Text _hudFireworks;
+    private TMP_Text _hudFireworks;
     [SerializeField]
-    private Text _hudFuel;
+    private TMP_Text _hudFuel;
 
     [SerializeField]
-    private Text _hudCompletion;
+    private TMP_Text _hudCompletion;
+
+    [SerializeField]
+    private GameObject _winCondition;
 
     public Equipment _equipment;
 
@@ -60,6 +64,17 @@ public class HudManager : MonoBehaviour
 
 
         }
+        if (e.PropertyName.Equals(nameof(LevelProgression.WinConditionMet)))
+        {
+            if (LevelProgression.WinConditionMet == true)
+            {
+                _winCondition.SetActive(true);
+            }
+
+
+        }
+
+
 
     }
 
