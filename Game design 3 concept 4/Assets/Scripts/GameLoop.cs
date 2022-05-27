@@ -23,8 +23,8 @@ public class GameLoop : MonoBehaviour
     private ToNextScene _nextSceneLoader;
 
 
-    [SerializeField]
-    private LevelSaveSystem _levelSaveSystem;
+    //[SerializeField]
+    //private LevelSaveSystem _levelSaveSystem;
 
     [SerializeField]
     private int _startingMatches;
@@ -45,7 +45,7 @@ public class GameLoop : MonoBehaviour
 
     void Start()
     {
-       
+
 
         _levelProgression._gameLoop = this;
         House[] tempHouses = GameObject.FindObjectsOfType<House>();
@@ -70,7 +70,7 @@ public class GameLoop : MonoBehaviour
         _levelProgression.PropertyChanged += (s, e) => LevelCompletionChanged(s, e);
 
         _nextSceneLoader.LevelProgression = _levelProgression;
-        _nextSceneLoader.LevelSaveSystem = _levelSaveSystem;
+        //_nextSceneLoader.LevelSaveSystem = _levelSaveSystem;
 
 
     }

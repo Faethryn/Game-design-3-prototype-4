@@ -12,7 +12,7 @@ public class ToNextScene : MonoBehaviour
 
     public LevelProgression LevelProgression;
 
-    public LevelSaveSystem LevelSaveSystem;
+    //public LevelSaveSystem LevelSaveSystem;
 
     private PlayerInput _playerInput;
 
@@ -32,17 +32,17 @@ public class ToNextScene : MonoBehaviour
 
     
 
-    private void SaveScore()
-    {
+    //private void SaveScore()
+    //{
 
-        LevelSaveSystem.SaveCompletion(LevelProgression.CurrentLevelPercentage, SceneManager.GetActiveScene().name);
-    }
+    //    LevelSaveSystem.SaveCompletion(LevelProgression.CurrentLevelPercentage, SceneManager.GetActiveScene().name);
+    //}
 
     private void Action(InputAction.CallbackContext context)
     {
         if (this.gameObject.activeInHierarchy)
         {
-            SaveScore();
+            //SaveScore();
             LoadNextLevel();
 
         }
