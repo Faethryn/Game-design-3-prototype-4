@@ -33,8 +33,20 @@ public class GameLoop : MonoBehaviour
     [SerializeField]
     private int _startingFireworks;
 
+    public PlayerInput PlayerInput ;
+
+    private void Awake()
+    {
+        PlayerInput = new PlayerInput();
+        PlayerInput.Player.Enable();
+    }
+
+
+
     void Start()
     {
+       
+
         _levelProgression._gameLoop = this;
         House[] tempHouses = GameObject.FindObjectsOfType<House>();
         _levelProgression.AddHouses(tempHouses);
@@ -80,4 +92,7 @@ public class GameLoop : MonoBehaviour
         }
 
     }
+
+
+    
 }

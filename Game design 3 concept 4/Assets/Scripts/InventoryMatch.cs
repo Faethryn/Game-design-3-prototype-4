@@ -17,13 +17,16 @@ public class InventoryMatch : MonoBehaviour
 
     private void Start()
     {
-        _playerInput = new PlayerInput();
-        _playerInput.Player.Enable();
+        _playerInput = FindObjectOfType<GameLoop>().PlayerInput;
         _playerInput.Player.UseItem.performed += Action;
     }
 
+    private void OnDestroy()
+    {
+        _playerInput.Player.UseItem.performed -= Action;
+    }
 
-    
+
     private void Action(InputAction.CallbackContext context)
     {
         if (this.gameObject.active && Equipment.Match > 0)

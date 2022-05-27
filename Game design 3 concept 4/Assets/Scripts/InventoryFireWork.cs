@@ -17,22 +17,26 @@ public class InventoryFireWork : MonoBehaviour
 
     private void Start()
     {
-        _playerInput = new PlayerInput();
-        _playerInput.Player.Enable();
+        _playerInput = FindObjectOfType<GameLoop>().PlayerInput;
         _playerInput.Player.UseItem.performed += Action;
     }
 
+    private void OnDestroy()
+    {
+        _playerInput.Player.UseItem.performed -= Action;
+    }
+
     // Update is called once per frame
-   //private void Update()
-   // {
-   //     if ( Equipment.Firework > 0)
-   //     {
-           
-             
-   //             Instantiate(_FireworkObject, _placementTransform.position, _placementTransform.rotation);
-   //         Equipment.Firework -= 1;
-   //     }
-   // }
+    //private void Update()
+    // {
+    //     if ( Equipment.Firework > 0)
+    //     {
+
+
+    //             Instantiate(_FireworkObject, _placementTransform.position, _placementTransform.rotation);
+    //         Equipment.Firework -= 1;
+    //     }
+    // }
 
     private void Action(InputAction.CallbackContext context)
     {

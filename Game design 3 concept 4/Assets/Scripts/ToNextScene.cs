@@ -18,14 +18,15 @@ public class ToNextScene : MonoBehaviour
 
     private void Start()
     {
-        _playerInput = new PlayerInput();
-        _playerInput.Player.Enable();
+        _playerInput = FindObjectOfType<GameLoop>().PlayerInput;
+        
         _playerInput.Player.NextLevel.performed += Action;
     }
 
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(_nextLevelName);
+        _playerInput.Disable();
 
     }
 
@@ -39,11 +40,20 @@ public class ToNextScene : MonoBehaviour
 
     private void Action(InputAction.CallbackContext context)
     {
-        
-        
+        if (this.gameObject.activeInHierarchy)
+        {
             SaveScore();
             LoadNextLevel();
+
+        }
+        
         
     }
 
+    private void OnDestroy()
+    {
+        _playerInput.Player.NextLevel.performed -= Action;
+
+        this.gameObject.SetActive(false);
+    }
 }

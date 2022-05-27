@@ -23,9 +23,8 @@ public class InventoryJerrycan : MonoBehaviour
     private void Start()
     {
         _timer = _maxTime;
-        _playerInput = new PlayerInput();
-        _playerInput.Player.Enable();
-       
+        _playerInput = FindObjectOfType<GameLoop>().PlayerInput;
+
     }
 
 

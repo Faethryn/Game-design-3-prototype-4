@@ -25,10 +25,9 @@ public class FirstPersonMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         _jumpForce = -Physics.gravity.normalized * Mathf.Sqrt(2 * Physics.gravity.magnitude * _jumpHeight);
-        _playerInput = new PlayerInput();
-        _playerInput.Player.Enable();
+        _playerInput = FindObjectOfType<GameLoop>().PlayerInput;
 
-        
+
     }
 
     // Update is called once per frame
@@ -85,4 +84,9 @@ public class FirstPersonMovement : MonoBehaviour
         }
 
     }
+
+
+
+
+   
 }

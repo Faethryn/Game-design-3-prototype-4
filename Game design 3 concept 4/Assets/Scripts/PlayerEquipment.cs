@@ -31,6 +31,12 @@ public class PlayerEquipment : MonoBehaviour
         _playerInput.Player.PreviousItem.performed += PreviousItemAction;
     }
 
+    private void OnDestroy()
+    {
+        _playerInput.Player.NextItem.performed -= NextItemAction;
+        _playerInput.Player.PreviousItem.performed -= PreviousItemAction;
+    }
+
     private void NextItemAction(InputAction.CallbackContext context)
     {
         if (_itemIndex == 3)
@@ -91,6 +97,8 @@ public class PlayerEquipment : MonoBehaviour
         }
         
     }
+
+  
 
     
 }

@@ -17,9 +17,8 @@ public class FirstPersonLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-       _playerInput = new PlayerInput();
-        _playerInput.Player.Enable();
-        
+        _playerInput = FindObjectOfType<GameLoop>().PlayerInput;
+
     }
 
     // Update is called once per frame
