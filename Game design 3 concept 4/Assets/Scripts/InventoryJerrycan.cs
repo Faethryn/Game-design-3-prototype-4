@@ -39,7 +39,7 @@ public class InventoryJerrycan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_playerInput.Player.UseGasoline.ReadValue<float>() != 0 && Equipment.Fuel > 0)
+        if (_playerInput.Player.UseGasoline.ReadValue<float>() != 0 && Equipment.Fuel > 0 && Time.timeScale == 1)
         {
             _timer += Time.deltaTime;
             if (_timer >= _maxTime)

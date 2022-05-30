@@ -126,10 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51709cbae0baef748bd03e27f9c0d67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 10
+  _range: 15
   _force: 4000
   _interactibleLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1152
   _explosionPrefab: {fileID: 4281636378199804449, guid: 7fde1d1090ef372449af97f212ce4477, type: 3}
   _explosionParticlePrefab: {fileID: 1742013225946848, guid: b3d8264aa7d2d824a8a503e45291ddf4, type: 3}

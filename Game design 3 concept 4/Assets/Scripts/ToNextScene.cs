@@ -30,19 +30,19 @@ public class ToNextScene : MonoBehaviour
 
     }
 
-    
 
-    //private void SaveScore()
-    //{
 
-    //    LevelSaveSystem.SaveCompletion(LevelProgression.CurrentLevelPercentage, SceneManager.GetActiveScene().name);
-    //}
+    private void SaveScore()
+    {
+
+        LevelSaveSystem.SaveCompletion(LevelProgression.CurrentLevelPercentage, SceneManager.GetActiveScene().name);
+    }
 
     private void Action(InputAction.CallbackContext context)
     {
-        if (this.gameObject.activeInHierarchy)
+        if (this.gameObject.activeInHierarchy && Time.timeScale == 1)
         {
-            //SaveScore();
+            SaveScore();
             LoadNextLevel();
 
         }

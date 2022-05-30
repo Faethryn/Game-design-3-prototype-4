@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameLoop : MonoBehaviour
 {
@@ -34,6 +35,12 @@ public class GameLoop : MonoBehaviour
     private int _startingFireworks;
 
     public PlayerInput PlayerInput ;
+
+
+    [SerializeField]
+    private GameObject _pauseScreen;
+
+    
 
     private void Awake()
     {
@@ -70,6 +77,8 @@ public class GameLoop : MonoBehaviour
         _levelProgression.PropertyChanged += (s, e) => LevelCompletionChanged(s, e);
 
         _nextSceneLoader.LevelProgression = _levelProgression;
+
+        PlayerInput.Player.PauseButton.performed += Pause;
         //_nextSceneLoader.LevelSaveSystem = _levelSaveSystem;
 
 
@@ -93,6 +102,35 @@ public class GameLoop : MonoBehaviour
 
     }
 
+    private void Pause(InputAction.CallbackContext context)
+    {
 
-    
+        if (_pauseScreen.activeInHierarchy == false)
+        {
+            _pauseScreen.SetActive(true);
+            Time.timeScale = 0;
+
+            
+
+        }
+     else   if (_pauseScreen.activeInHierarchy == true)
+        {
+            _pauseScreen.SetActive(false);
+            Time.timeScale = 1;
+        }
+
+
+      
+
+
+
+    }
+
+    private void OnDestroy()
+    {
+        PlayerInput.Player.PauseButton.performed -= Pause;
+    }
+
+
+
 }

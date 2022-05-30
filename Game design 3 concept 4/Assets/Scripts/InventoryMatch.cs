@@ -29,7 +29,7 @@ public class InventoryMatch : MonoBehaviour
 
     private void Action(InputAction.CallbackContext context)
     {
-        if (this.gameObject.active && Equipment.Match > 0)
+        if (this.gameObject.active && Equipment.Match > 0 && Time.timeScale == 1)
         {
 
             Instantiate(_ThrowingMatchPrefab, _spawnTransform.position, _spawnTransform.rotation);

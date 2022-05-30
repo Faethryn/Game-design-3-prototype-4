@@ -1136,7 +1136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6167163355120102167, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
       propertyPath: _levelName
-      value: PyroPixel_SandboxScene
+      value: PyroPixel_Level1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}

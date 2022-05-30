@@ -40,7 +40,7 @@ public class InventoryFireWork : MonoBehaviour
 
     private void Action(InputAction.CallbackContext context)
     {
-        if (this.gameObject.active && Equipment.Firework > 0)
+        if (this.gameObject.active && Equipment.Firework > 0 && Time.timeScale == 1)
         {
 
 

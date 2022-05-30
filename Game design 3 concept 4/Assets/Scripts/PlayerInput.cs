@@ -40,7 +40,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""id"": ""9620dac9-184a-415e-b10b-3892b6fcb609"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press(pressPoint=0.1)""
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""NextItem"",
@@ -81,6 +81,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PauseButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""a24e6ac5-e0e9-49d7-8cf4-d789a4e627ed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -99,7 +107,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""82fc31f1-e66f-4221-8489-f60094e90d9d"",
                     ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Use Item"",
@@ -171,6 +179,17 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""631d2674-6628-453f-a2cc-e76da7b4b3e8"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox controller"",
+                    ""action"": ""PauseButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -193,6 +212,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_NextLevel = m_Player.FindAction("NextLevel", throwIfNotFound: true);
         m_Player_UseGasoline = m_Player.FindAction("Use Gasoline", throwIfNotFound: true);
+        m_Player_PauseButton = m_Player.FindAction("PauseButton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -250,6 +270,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_NextLevel;
     private readonly InputAction m_Player_UseGasoline;
+    private readonly InputAction m_Player_PauseButton;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -262,6 +283,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @NextLevel => m_Wrapper.m_Player_NextLevel;
         public InputAction @UseGasoline => m_Wrapper.m_Player_UseGasoline;
+        public InputAction @PauseButton => m_Wrapper.m_Player_PauseButton;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -295,6 +317,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @UseGasoline.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseGasoline;
                 @UseGasoline.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseGasoline;
                 @UseGasoline.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseGasoline;
+                @PauseButton.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauseButton;
+                @PauseButton.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauseButton;
+                @PauseButton.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauseButton;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -323,6 +348,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @UseGasoline.started += instance.OnUseGasoline;
                 @UseGasoline.performed += instance.OnUseGasoline;
                 @UseGasoline.canceled += instance.OnUseGasoline;
+                @PauseButton.started += instance.OnPauseButton;
+                @PauseButton.performed += instance.OnPauseButton;
+                @PauseButton.canceled += instance.OnPauseButton;
             }
         }
     }
@@ -346,5 +374,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnNextLevel(InputAction.CallbackContext context);
         void OnUseGasoline(InputAction.CallbackContext context);
+        void OnPauseButton(InputAction.CallbackContext context);
     }
 }

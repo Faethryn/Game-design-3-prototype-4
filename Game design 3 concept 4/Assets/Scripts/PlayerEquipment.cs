@@ -39,6 +39,8 @@ public class PlayerEquipment : MonoBehaviour
 
     private void NextItemAction(InputAction.CallbackContext context)
     {
+        if (Time.timeScale == 1)
+        { 
         if (_itemIndex == 3)
         {
             _itemIndex = 1;
@@ -49,21 +51,26 @@ public class PlayerEquipment : MonoBehaviour
         }
 
         SwitchEquipment();
-
+        }
     }
 
     private void PreviousItemAction(InputAction.CallbackContext context)
     {
-        if (_itemIndex == 1)
+        if (Time.timeScale == 1)
         {
-            _itemIndex = 3;
-        }
-        else
-        {
-            _itemIndex -= 1;
-        }
 
-        SwitchEquipment();
+
+            if (_itemIndex == 1)
+            {
+                _itemIndex = 3;
+            }
+            else
+            {
+                _itemIndex -= 1;
+            }
+
+            SwitchEquipment();
+        }
     }
 
    

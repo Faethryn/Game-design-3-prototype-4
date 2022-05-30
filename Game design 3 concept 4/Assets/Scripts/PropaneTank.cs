@@ -28,13 +28,13 @@ public class PropaneTank : MonoBehaviour, IBurnable
             Collider[] collidersInRange = Physics.OverlapSphere(this.transform.position, _range, _interactibleLayers);
             foreach (Collider collider in collidersInRange)
             {
-                IEffectable effectableScript = collider.gameObject.GetComponent<IEffectable>();
+                //IEffectable effectableScript = collider.gameObject.GetComponent<IEffectable>();
                 IBurnable burnableScript = collider.gameObject.GetComponent<IBurnable>();
 
-                if (effectableScript != null)
-                {
-                    effectableScript.AddVelocity(this.transform.position, _range, _force);
-                }
+                //if (effectableScript != null)
+                //{
+                //    effectableScript.AddVelocity(this.transform.position, _range, _force);
+                //}
                 if (burnableScript != null && this != burnableScript)
                 {
                     burnableScript.Burning();

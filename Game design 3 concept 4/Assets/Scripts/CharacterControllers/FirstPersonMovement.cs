@@ -31,7 +31,9 @@ public class FirstPersonMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   
+
+    private void FixedUpdate()
     {
         float x = _playerInput.Player.Movement.ReadValue<Vector2>().x;
         float z = _playerInput.Player.Movement.ReadValue<Vector2>().y;
@@ -45,7 +47,6 @@ public class FirstPersonMovement : MonoBehaviour
         ApplyGround();
         ApplyJump();
         GroundMovement(move);
-
     }
 
     private void GroundMovement(Vector3 moving)

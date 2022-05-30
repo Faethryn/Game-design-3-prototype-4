@@ -28,6 +28,7 @@ public class FirstPersonLook : MonoBehaviour
         ControllerInput();
     }
 
+
     private void ControllerInput()
     {
         float rightStickX = _playerInput.Player.Camera.ReadValue<Vector2>().x * mouseSensitivity * Time.deltaTime;
