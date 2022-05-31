@@ -124,6 +124,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6476972629282856460}
     m_Modifications:
+    - target: {fileID: 2920542298375902661, guid: 474424ed22a15c0448a95398788c8ee4, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6400823882021890700, guid: 474424ed22a15c0448a95398788c8ee4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -168,6 +172,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7720730526462918976, guid: 474424ed22a15c0448a95398788c8ee4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720730526462918976, guid: 474424ed22a15c0448a95398788c8ee4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720730526462918976, guid: 474424ed22a15c0448a95398788c8ee4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7848156392444254492, guid: 474424ed22a15c0448a95398788c8ee4, type: 3}
       propertyPath: m_Name
       value: L-HouseParticleCollectionParticleCollection
@@ -175,6 +191,14 @@ PrefabInstance:
     - target: {fileID: 7848156392444254492, guid: 474424ed22a15c0448a95398788c8ee4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252292738420225495, guid: 474424ed22a15c0448a95398788c8ee4, type: 3}
+      propertyPath: m_Range
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252292738420225495, guid: 474424ed22a15c0448a95398788c8ee4, type: 3}
+      propertyPath: m_Intensity
+      value: 4.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 474424ed22a15c0448a95398788c8ee4, type: 3}
