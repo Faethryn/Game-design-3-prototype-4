@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PyroPixel_Level4.unity
     guid: bb0adb7d5e707984ebe594a1f5bcc7cf
+  - enabled: 1
+    path: Assets/Scenes/PyroPixel_Level5.unity
+    guid: a7231cd25ce02234384e07edd5db5a26
+  - enabled: 1
+    path: Assets/Scenes/PyroPixel_How_To_Play.unity
+    guid: e51b1c6cc08870a4d85d16e2bdd3e56f
   m_configObjects: {}

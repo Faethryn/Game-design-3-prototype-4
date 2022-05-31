@@ -237,6 +237,10 @@ PrefabInstance:
       value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6096203845906400344, guid: e6e2e2ee9aad87243a3d3cb1b275d5d2, type: 3}
+      propertyPath: _menuSceneName
+      value: PyroPixel_MenuScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096203845906400344, guid: e6e2e2ee9aad87243a3d3cb1b275d5d2, type: 3}
       propertyPath: _levelSaveSystem
       value: 
       objectReference: {fileID: 0}
@@ -464,6 +468,10 @@ PrefabInstance:
     - target: {fileID: 2214060832910224325, guid: ba22b87c15c87374f8d057b986794896, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286971846890163655, guid: ba22b87c15c87374f8d057b986794896, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2756916915543519706, guid: ba22b87c15c87374f8d057b986794896, type: 3}
       propertyPath: m_Pivot.x

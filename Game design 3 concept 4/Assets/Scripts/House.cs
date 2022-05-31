@@ -23,7 +23,7 @@ public class House : MonoBehaviour, IBurnable
 
     public LevelProgression _levelProgression;
 
-    public void Burning()
+    public void Burning(Collider Sender)
     {
         _isBurning = true;
         _particleSystem.SetActive(true);
@@ -38,6 +38,9 @@ public class House : MonoBehaviour, IBurnable
     private float _dissolve = 0;
 
     private MaterialPropertyBlock _matPropBlock;
+
+    public bool IsBurned { get; set; } = false;
+
     private void OnValidate()
     {
         if (_meshRenderer == null) _meshRenderer = this.GetComponent<MeshRenderer>() as MeshRenderer;

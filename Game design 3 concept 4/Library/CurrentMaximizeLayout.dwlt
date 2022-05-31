@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 1156, y: 458}
+  m_MaxSize: {x: 12002, y: 8042}
   vertical: 1
-  controlID: 2225
+  controlID: 1400
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -44,8 +44,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 289.8
-    y: 19
+    x: 288.80002
+    y: 73.6
     width: 898.00006
     height: 389.4
   m_ViewDataDictionary: {fileID: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -134,10 +134,10 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 731
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 1156, y: 458}
+  m_MaxSize: {x: 12002, y: 8042}
   vertical: 0
-  controlID: 2226
+  controlID: 1401
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,10 +159,10 @@ MonoBehaviour:
     y: 0
     width: 1188.8
     height: 731
-  m_MinSize: {x: 403, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
+  m_MinSize: {x: 881, y: 458}
+  m_MaxSize: {x: 8002, y: 8042}
   vertical: 1
-  controlID: 2227
+  controlID: 1402
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -184,10 +184,10 @@ MonoBehaviour:
     y: 0
     width: 1188.8
     height: 410.4
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 2228
+  controlID: 1403
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -207,8 +207,8 @@ MonoBehaviour:
     y: 0
     width: 288.8
     height: 410.4
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 7}
   m_Panes:
   - {fileID: 7}
@@ -241,10 +241,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 400}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0e20ffff0827ffff282effff748bffff7690ffff8296ffff2498ffff7c9effff96a0fffff4a7fffffcadffff2adbffff4ae2ffff44fbffff446d00001a7d0000
+      m_ExpandedIDs: 26befcff22cefcffdadbfcffdce9fcff8ceafcff54f7fcff4403fdff1e0ffdfff61afdffe026fdff6a34fdffe834fdffa85afeff7653ffff026affffd696ffff46aaffffbad3ffff46eaffff4cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -335,9 +335,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.0346112, y: 0.80909723, z: -52.96726}
+    m_Target: {x: 41.36071, y: 9.935172, z: -24.637291}
     speed: 2
-    m_Value: {x: -3.0346112, y: 0.80909723, z: -52.96726}
+    m_Value: {x: 41.36071, y: 9.935172, z: -24.637291}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -384,13 +384,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.16385898, y: 0.10399703, z: -0.015798032, w: 0.9812344}
+    m_Target: {x: 0.14172412, y: 0.7746754, z: -0.18216823, w: 0.5893786}
     speed: 2
-    m_Value: {x: 0.16379873, y: 0.1039588, z: -0.015792225, w: 0.98087364}
+    m_Value: {x: 0.14167029, y: 0.77438116, z: -0.18209903, w: 0.5891547}
   m_Size:
-    m_Target: 3.569057
+    m_Target: 9.497703
     speed: 2
-    m_Value: 3.569057
+    m_Value: 9.497703
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1397,7 +1397,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ProfilerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -1406,16 +1406,16 @@ MonoBehaviour:
     y: 410.4
     width: 1188.8
     height: 320.6
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 15}
+  m_MinSize: {x: 881, y: 237}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 2
+  m_LastSelected: 0
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1467,10 +1467,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 35}
-    m_SelectedIDs: a0550000
-    m_LastClickedID: 21920
-    m_ExpandedIDs: 000000004e55000050550000525500005455000056550000585500005a5500005c5500005e55000060550000625500006455000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 12550000
+    m_LastClickedID: 21778
+    m_ExpandedIDs: 00000000de540000e0540000e2540000e4540000e6540000e8540000ea540000ec540000ee540000f0540000f2540000f454000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1498,7 +1498,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004e55000050550000525500005455000056550000585500005a5500005c5500005e55000060550000625500006455000000ca9a3b
+    m_ExpandedIDs: 00000000de540000e0540000e2540000e4540000e6540000e8540000ea540000ec540000ee540000f0540000f2540000f454000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1523,8 +1523,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d4550000
-    m_LastClickedInstanceID: 21972
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000cc4c0000b08e0000dc900000
     m_RenameOverlay:
@@ -1575,9 +1575,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 484
-    width: 1187.8
-    height: 299.6
+    y: 483.2
+    width: 1188
+    height: 300
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &17
 MonoBehaviour:
@@ -1605,7 +1605,7 @@ MonoBehaviour:
     height: 299.6
   m_ViewDataDictionary: {fileID: 0}
   m_VertSplit:
-    ID: 43295
+    ID: 2508
     splitterInitialOffset: 260
     currentActiveSplitter: -1
     realSizes:
@@ -2617,6 +2617,14 @@ MonoBehaviour:
       \"name\": \"PauseButton\",\n                    \"type\": \"Button\",\n                   
       \"id\": \"a24e6ac5-e0e9-49d7-8cf4-d789a4e627ed\",\n                    \"expectedControlType\":
       \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"RestartLevel\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"0379238c-7c71-43ba-a7b4-f0d7a7bd880c\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"BackToMenu\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"30b8eefc-6191-409f-b8ee-1d006342352f\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\"\n                }\n            ],\n            \"bindings\":
       [\n                {\n                    \"name\": \"\",\n                   
       \"id\": \"89d47e68-f354-4761-b63f-5a90bd9c88d1\",\n                    \"path\":
@@ -2666,6 +2674,16 @@ MonoBehaviour:
       \"path\": \"<Gamepad>/start\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Xbox controller\",\n                   
       \"action\": \"PauseButton\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"43325f7b-c37a-418c-992c-5236304b0d43\",\n                   
+      \"path\": \"<Gamepad>/dpad/down\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Xbox controller\",\n                   
+      \"action\": \"RestartLevel\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"5cab5b58-9ed0-444c-a251-d657958f1d9c\",\n                   
+      \"path\": \"<Gamepad>/dpad/up\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Xbox controller\",\n                   
+      \"action\": \"BackToMenu\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": false\n                }\n            ]\n        }\n   
       ],\n    \"controlSchemes\": [\n        {\n            \"name\": \"Xbox controller\",\n           
       \"bindingGroup\": \"Xbox controller\",\n            \"devices\": []\n       
@@ -2707,8 +2725,8 @@ MonoBehaviour:
     y: 0
     width: 347.19995
     height: 731
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -2745,7 +2763,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 21972
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_LockTracker:

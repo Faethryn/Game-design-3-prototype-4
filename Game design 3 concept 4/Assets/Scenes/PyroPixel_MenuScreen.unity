@@ -583,6 +583,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3800227344944929405, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800227344944929405, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800227344944929405, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1172740629}
+    - target: {fileID: 3800227344944929405, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800227344944929405, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800227344944929405, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuButton, GameDesign.PyroPixel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800227344944929405, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3800227344944929407, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -591,6 +619,10 @@ PrefabInstance:
       propertyPath: m_text
       value: How To Play
       objectReference: {fileID: 0}
+    - target: {fileID: 6167163355120102167, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
+      propertyPath: _levelName
+      value: PyroPixel_How_To_Play
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
 --- !u!224 &684935419 stripped
@@ -598,6 +630,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3800227344944929404, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
   m_PrefabInstance: {fileID: 684935418}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1172740629 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6167163355120102167, guid: 935c3a9d26ddbc144a7b62bdecf1f84a, type: 3}
+  m_PrefabInstance: {fileID: 684935418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39179cd23e830cd4983f859c7c63b174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1286118375 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 168144123559841408, guid: 77c82b3551d8ac34c8cbd40b7f6c196f, type: 3}

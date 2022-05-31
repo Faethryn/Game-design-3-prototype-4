@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameLoop : MonoBehaviour
 {
@@ -40,7 +41,23 @@ public class GameLoop : MonoBehaviour
     [SerializeField]
     private GameObject _pauseScreen;
 
-    
+    [SerializeField]
+    private string _menuSceneName;
+
+    public Queue<IEnumerator> coroutineQueue = new Queue<IEnumerator>();
+
+  
+
+    IEnumerator CoroutineCoordinator()
+    {
+        while (true)
+        {
+            while (coroutineQueue.Count > 0)
+                yield return StartCoroutine(coroutineQueue.Dequeue());
+            yield return null;
+        }
+    }
+
 
     private void Awake()
     {
@@ -52,7 +69,7 @@ public class GameLoop : MonoBehaviour
 
     void Start()
     {
-
+        StartCoroutine(CoroutineCoordinator());
 
         _levelProgression._gameLoop = this;
         House[] tempHouses = GameObject.FindObjectsOfType<House>();
@@ -79,6 +96,8 @@ public class GameLoop : MonoBehaviour
         _nextSceneLoader.LevelProgression = _levelProgression;
 
         PlayerInput.Player.PauseButton.performed += Pause;
+        PlayerInput.Player.RestartLevel.performed += Restart;
+        PlayerInput.Player.BackToMenu.performed += BackToMenu;
         //_nextSceneLoader.LevelSaveSystem = _levelSaveSystem;
 
 
@@ -126,9 +145,29 @@ public class GameLoop : MonoBehaviour
 
     }
 
+    private void BackToMenu(InputAction.CallbackContext context)
+    {
+        if (_pauseScreen.activeInHierarchy == true)
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(_menuSceneName);
+        }
+    }
+
+    private void Restart(InputAction.CallbackContext context)
+    {
+        if (_pauseScreen.activeInHierarchy == true)
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
     private void OnDestroy()
     {
         PlayerInput.Player.PauseButton.performed -= Pause;
+        PlayerInput.Player.RestartLevel.performed -= Restart;
+        PlayerInput.Player.BackToMenu.performed -= BackToMenu;
     }
 
 

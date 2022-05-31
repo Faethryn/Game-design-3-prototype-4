@@ -32,12 +32,14 @@ public class FireWorkLogic : MonoBehaviour, IBurnable
     [SerializeField]
     private GameObject _fireWorkParticlePrefab;
 
+    public bool IsBurned { get; set; } = false;
 
-    public void Burning()
+    public void Burning(Collider Sender)
     {
         _isBurning = true;
         _particleSystem.SetActive(true);
         _burnSensor.SetActive(true);
+        IsBurned = true;
     }
 
     private void Update()
@@ -48,6 +50,7 @@ public class FireWorkLogic : MonoBehaviour, IBurnable
            
             _rocketBody.AddForce(this.transform.forward * _speed);
                 _gotMoved = true;
+            
             _timer += Time.deltaTime;
             
         }
@@ -60,16 +63,16 @@ public class FireWorkLogic : MonoBehaviour, IBurnable
             Collider[] collidersInRange = Physics.OverlapSphere(this.transform.position, _range, _interactibleLayers);
             foreach (Collider collider in collidersInRange)
             {
-                IEffectable effectableScript = collider.gameObject.GetComponent<IEffectable>();
+                //IEffectable effectableScript = collider.gameObject.GetComponent<IEffectable>();
                 IBurnable burnableScript = collider.gameObject.GetComponent<IBurnable>();
 
-                if (effectableScript != null)
+                //if (effectableScript != null)
+                //{
+                //    effectableScript.AddVelocity(this.transform.position, _range, _force);
+                //}
+                if (burnableScript != null && this != burnableScript && burnableScript.IsBurned != true)
                 {
-                    effectableScript.AddVelocity(this.transform.position, _range, _force);
-                }
-                if (burnableScript != null && this != burnableScript)
-                {
-                    burnableScript.Burning();
+                    burnableScript.Burning(this.GetComponent<MeshCollider>());
                 }
 
             }

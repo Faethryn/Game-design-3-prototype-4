@@ -21,11 +21,12 @@ public class BurningInteraction : MonoBehaviour, IBurnable, IEffectable
 
    
 
-    public void Burning()
+    public void Burning(Collider Sender)
     {
         _isBurning = true;
         _particleSystem.SetActive(true);
         _burnSensor.SetActive(true);
+        IsBurned = true;
     }
 
     [SerializeField]
@@ -35,6 +36,9 @@ public class BurningInteraction : MonoBehaviour, IBurnable, IEffectable
     private float _dissolve = 0;
 
     private MaterialPropertyBlock _matPropBlock;
+
+    public bool IsBurned { get; set; } = false;
+
     private void OnValidate()
     {
         if (_meshRenderer == null) _meshRenderer = this.GetComponent<MeshRenderer>() as MeshRenderer;

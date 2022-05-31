@@ -48,6 +48,10 @@ MonoBehaviour:
   _invJerrycan: {fileID: 0}
   _invMatch: {fileID: 0}
   _hudManager: {fileID: 0}
+  _levelProgression: {fileID: 0}
+  _nextSceneLoader: {fileID: 0}
   _startingMatches: 10
   _startingFuel: 200
   _startingFireworks: 5
+  _pauseScreen: {fileID: 0}
+  _menuSceneName: PyroPixel_MenuScreen

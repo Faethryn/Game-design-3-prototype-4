@@ -89,6 +89,22 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""RestartLevel"",
+                    ""type"": ""Button"",
+                    ""id"": ""0379238c-7c71-43ba-a7b4-f0d7a7bd880c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""BackToMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""30b8eefc-6191-409f-b8ee-1d006342352f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -190,6 +206,28 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""PauseButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43325f7b-c37a-418c-992c-5236304b0d43"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox controller"",
+                    ""action"": ""RestartLevel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5cab5b58-9ed0-444c-a251-d657958f1d9c"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox controller"",
+                    ""action"": ""BackToMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -213,6 +251,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_Player_NextLevel = m_Player.FindAction("NextLevel", throwIfNotFound: true);
         m_Player_UseGasoline = m_Player.FindAction("Use Gasoline", throwIfNotFound: true);
         m_Player_PauseButton = m_Player.FindAction("PauseButton", throwIfNotFound: true);
+        m_Player_RestartLevel = m_Player.FindAction("RestartLevel", throwIfNotFound: true);
+        m_Player_BackToMenu = m_Player.FindAction("BackToMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -271,6 +311,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_NextLevel;
     private readonly InputAction m_Player_UseGasoline;
     private readonly InputAction m_Player_PauseButton;
+    private readonly InputAction m_Player_RestartLevel;
+    private readonly InputAction m_Player_BackToMenu;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -284,6 +326,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @NextLevel => m_Wrapper.m_Player_NextLevel;
         public InputAction @UseGasoline => m_Wrapper.m_Player_UseGasoline;
         public InputAction @PauseButton => m_Wrapper.m_Player_PauseButton;
+        public InputAction @RestartLevel => m_Wrapper.m_Player_RestartLevel;
+        public InputAction @BackToMenu => m_Wrapper.m_Player_BackToMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -320,6 +364,12 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @PauseButton.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauseButton;
                 @PauseButton.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauseButton;
                 @PauseButton.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauseButton;
+                @RestartLevel.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestartLevel;
+                @RestartLevel.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestartLevel;
+                @RestartLevel.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestartLevel;
+                @BackToMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBackToMenu;
+                @BackToMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBackToMenu;
+                @BackToMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBackToMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -351,6 +401,12 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @PauseButton.started += instance.OnPauseButton;
                 @PauseButton.performed += instance.OnPauseButton;
                 @PauseButton.canceled += instance.OnPauseButton;
+                @RestartLevel.started += instance.OnRestartLevel;
+                @RestartLevel.performed += instance.OnRestartLevel;
+                @RestartLevel.canceled += instance.OnRestartLevel;
+                @BackToMenu.started += instance.OnBackToMenu;
+                @BackToMenu.performed += instance.OnBackToMenu;
+                @BackToMenu.canceled += instance.OnBackToMenu;
             }
         }
     }
@@ -375,5 +431,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnNextLevel(InputAction.CallbackContext context);
         void OnUseGasoline(InputAction.CallbackContext context);
         void OnPauseButton(InputAction.CallbackContext context);
+        void OnRestartLevel(InputAction.CallbackContext context);
+        void OnBackToMenu(InputAction.CallbackContext context);
     }
 }

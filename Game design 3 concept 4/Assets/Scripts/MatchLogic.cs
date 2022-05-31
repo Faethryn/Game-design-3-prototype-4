@@ -10,14 +10,20 @@ public class MatchLogic : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        other.GetComponent<IBurnable>().Burning();
-        //StartCoroutine(Burning(other.GetComponent<IBurnable>()));
+        //other.GetComponent<IBurnable>().Burning();
+       StartCoroutine(Burning(other.GetComponent<IBurnable>(), this.GetComponent<SphereCollider>(), other.gameObject));
     }
 
-    IEnumerator Burning(IBurnable burnObject)
+    IEnumerator Burning(IBurnable burnObject, Collider thisCollider, GameObject otherObject)
     {
-        burnObject.Burning();
+      if (otherObject != null)
+        {
 
-        yield return new WaitForEndOfFrame();
+        burnObject.Burning(thisCollider);
+        }
+
+        
+
+        yield return new WaitForSeconds(0.2f);
     }
 }

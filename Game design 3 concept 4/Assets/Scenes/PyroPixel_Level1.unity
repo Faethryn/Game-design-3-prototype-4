@@ -474,7 +474,7 @@ PrefabInstance:
     - target: {fileID: 5245176517782813053, guid: 85051e2c532193d45a15e9d85786e762, type: 3}
       propertyPath: m_text
       value: if you've got some supplies left, you can try and burn as many trees
-        as youre able to before proceeding to the next level with the X-button
+        as youre able to before proceeding to the next level with the Y-button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85051e2c532193d45a15e9d85786e762, type: 3}
@@ -5234,7 +5234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8999985867569754707, guid: 22bd0c3153607fa489d9ce95def22b53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.381361
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 8999985867569754707, guid: 22bd0c3153607fa489d9ce95def22b53, type: 3}
       propertyPath: m_LocalPosition.z

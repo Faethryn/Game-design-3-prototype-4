@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IBurnable 
 {
-    public void Burning();
+    public bool IsBurned { get; set; }
+    public void Burning(Collider Sender);
 }
